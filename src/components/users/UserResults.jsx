@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Spinner from '../layout/Spinner'
 
 function UserResults() {
 	// Initialize our state for users and loading
@@ -31,7 +32,8 @@ function UserResults() {
 			</div>
 		);
 	} else {
-		return <h3>Loading........</h3>;
+        // Displays the spinner.gif from the Spinner component
+		return <h3><Spinner/></h3>;
 	}
 }
 export default UserResults;
