@@ -1,6 +1,11 @@
+import UserResults from '../components/users/UserResults'
+
 function Home() {
   return (
-    <div>Home</div>
+    <>
+    {/* Search Component */}
+      <UserResults/>
+    </>
   )
 }
 export default Home
