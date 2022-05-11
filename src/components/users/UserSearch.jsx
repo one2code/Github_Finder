@@ -5,7 +5,7 @@ function UserSearch() {
 
     const [text,setText] = useState('')
 
-    const {users} = useContext(GithubContext)
+    const {users,searchUsers, clearUsers} = useContext(GithubContext)
     // An event handler that will take the user input from the search form and pass it into setText to update the text state.
     const handleChange = (e) => setText(e.target.value)
 
@@ -15,7 +15,7 @@ function UserSearch() {
     if (text === '') {
         alert('Please enter something')
      } else {
-            // Will be updated with search users functionality
+            searchUsers(text)
             setText('')
         }
       
@@ -36,7 +36,7 @@ function UserSearch() {
         </div>
         {users.length > 0 && (
             <div>
-            <button className="btn btn-ghost btn-lg">Clear</button>
+            <button onClick={clearUsers} className="btn btn-ghost btn-lg">Clear</button>
         </div>
         )}
         
