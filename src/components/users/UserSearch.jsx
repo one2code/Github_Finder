@@ -1,11 +1,13 @@
 import {useState, useContext} from 'react'
 import GithubContext from '../../context/github/GithubContext'
+import AlertContext from '../../context/alert/AlertContext'
 
 function UserSearch() {
 
     const [text,setText] = useState('')
 
     const {users,searchUsers, clearUsers} = useContext(GithubContext)
+    const {setAlert} = useContext(AlertContext)
     // An event handler that will take the user input from the search form and pass it into setText to update the text state.
     const handleChange = (e) => setText(e.target.value)
 
@@ -13,7 +15,7 @@ function UserSearch() {
         e.preventDefault()
         
     if (text === '') {
-        alert('Please enter something')
+        setAlert('Please enter a valid search', 'error')
      } else {
             searchUsers(text)
             setText('')
