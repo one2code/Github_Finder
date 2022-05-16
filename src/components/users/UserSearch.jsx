@@ -8,7 +8,7 @@ function UserSearch() {
     const [text,setText] = useState('')
 
         
-    const {users, dispatch, clearUsers} = useContext(GithubContext)
+    const {users, dispatch} = useContext(GithubContext)
     const {setAlert} = useContext(AlertContext)
     // An event handler that will take the user input from the search form and pass it into setText to update the text state.
     const handleChange = (e) => setText(e.target.value)
@@ -42,7 +42,7 @@ function UserSearch() {
         </div>
         {users.length > 0 && (
             <div>
-            <button onClick={clearUsers} className="btn btn-ghost btn-lg">Clear</button>
+            <button onClick={()=> dispatch({type: 'CLEAR_USERS'})} className="btn btn-ghost btn-lg">Clear</button>
         </div>
         )}
         
