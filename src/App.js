@@ -18,7 +18,7 @@ function App() {
 						<Navbar />
 
 						<main className="container mx-auto px-3 pb-12">
-							<Alert/>
+							<Alert />
 							<Routes>
 								<Route
 									path="/"
